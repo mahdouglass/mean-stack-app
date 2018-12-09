@@ -6,7 +6,7 @@
         type="text"
         name="title"
         placeholder="Post Title"
-        [ngModel]="post.title"
+        [ngModel]="post?.title"
         #title="ngModel"
         required
       />
@@ -18,7 +18,7 @@
         rows="6"
         name="content"
         placeholder="Post Content"
-        [ngModel]="post.content"
+        [ngModel]="post?.content"
         #content="ngModel"
         required
       ></textarea>
