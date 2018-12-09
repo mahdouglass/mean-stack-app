@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { NgForm } from '@angular/forms';
 import { PostsService } from '../posts.service';
 import { Post } from '../posts.model';
 
@@ -39,10 +39,9 @@ export class PostCreateComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    if (this.mode === 'create') {
+    if (this.mode === "create") {
       this.postsService.addPost(form.value.title, form.value.content);
-    }
-    else {
+    } else {
       this.postsService.updatePost(this.postId, form.value.title, form.value.content);
     }
     form.resetForm();
