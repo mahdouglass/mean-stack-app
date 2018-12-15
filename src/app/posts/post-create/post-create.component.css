@@ -6,3 +6,7 @@ textarea {
 mat-spinner {
   margin: auto;
 }
+
+.mat-stroked-button {
+  margin-bottom: 10px;
+}
