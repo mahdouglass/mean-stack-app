@@ -10,3 +10,7 @@ mat-spinner {
 .mat-stroked-button {
   margin-bottom: 10px;
 }
+
+input[type="file"] {
+  visibility: hidden;
+}
