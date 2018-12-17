@@ -4,7 +4,6 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { PostsService } from '../posts.service';
 import { Post } from '../posts.model';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-create',
