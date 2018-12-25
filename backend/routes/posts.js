@@ -1,5 +1,5 @@
 const express = require("express");
-const multer = requier("multer");
+const multer = require("multer");
 
 const Post = require("../models/post");
 
@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     const name = file.orginalname.toLowerCase().split(' ').join('-');
     const ext = MIME_TYPE_MAP[file.mimetype];
-    cb(null, name + '-' Date.now() + '.' + ext);
+    cb(null, name + '-' + Date.now() + '.' + ext);
   }
 });
 
