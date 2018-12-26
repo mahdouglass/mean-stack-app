@@ -10,3 +10,14 @@
 mat-spinner {
   margin: auto;
 }
+
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  -webkit-box-shadow: 4px 5px 10px -3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 4px 5px 10px -3px rgba(0,0,0,0.5);
+  box-shadow: 4px 5px 10px -3px rgba(0,0,0,0.5);
+}
