@@ -1,5 +1,12 @@
+body {
+  min-height: 100vh;
+}
+
 main {
   margin-top: 1rem;
   width: 80%;
   margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 136px);
 }
