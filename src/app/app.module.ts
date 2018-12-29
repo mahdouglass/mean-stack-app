@@ -9,7 +9,8 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatExpansionModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatPaginatorModule
 } from '@angular/material';
 
 import { AppComponent } from "./app.component";
@@ -37,6 +38,7 @@ import { FooterComponent } from "./footer/footer.component";
     MatToolbarModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+    MatPaginatorModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
