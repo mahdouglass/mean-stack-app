@@ -62,8 +62,19 @@ router.put("/:id", multer({storage: storage}).single("image"), (req, res, next) 
   });
 });
 
+// Fetching all posts & querying Mongoose to get specific posts
 router.get("", (req, res, next) => {
-  Post.find().then(documents => {
+  // console.log(req.query);
+  // Parse Query Example: https:localhost:3000/api/posts?pagesize=2&page=1&something=cool
+  const pageSize = req.query.pageSize;
+  const currentPage = req.query.page;
+  const postQuery = Post.find();
+  if(pageSize && currentPage) {
+    postQuery
+      .skip(pageSize * (currentPage - 1))
+      .limit(pageSize);
+  }
+  postQuery.find().then(documents => {
     res.status(200).json({
       message: "Posts fetched successfully!",
       posts: documents
