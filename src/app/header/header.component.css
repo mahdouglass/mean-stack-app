@@ -1,5 +1,11 @@
 ul {
     list-style: none;
+    display: flex;
+}
+
+li {
+    margin: 5px;
+    font-size: 18px;
 }
 
 a {
