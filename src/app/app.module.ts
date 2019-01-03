@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import {
   MatInputModule,
@@ -19,6 +19,7 @@ import { HeaderComponent } from "./header/header.component";
 import { PostListComponent } from "./posts/post-list/post-list.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { FooterComponent } from "./footer/footer.component";
+import { LoginComponent } from "./auth/login/login.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from "./footer/footer.component";
     PostCreateComponent,
     HeaderComponent,
     PostListComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { FooterComponent } from "./footer/footer.component";
     MatProgressSpinnerModule,
     MatPaginatorModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
