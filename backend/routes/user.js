@@ -27,4 +27,28 @@ router.post("/signup", (req, res, next) => {
     });
   });
 
+  router.post("/login", (req, res, next) {
+    User.findOne({ email: req.body.email })
+    .then(user => {
+      if (!User) {
+        return res.status(401).json({
+          message: 'Auth failed'
+        });
+      }
+      return bcrypt.compare(req.body.password, User.password);
+    })
+    .then(result => {
+      if (!result) {
+        return res.status(401).json({
+          message: 'Auth failed'
+        });
+      }
+    })
+    .catch(err => {
+      return res.status(401).json({
+        message: 'Auth failed'
+      })
+    });
+  });
+
 module.exports = router;
