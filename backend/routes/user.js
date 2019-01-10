@@ -1,5 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
 
@@ -27,7 +28,7 @@ router.post("/signup", (req, res, next) => {
     });
   });
 
-  router.post("/login", (req, res, next) {
+  router.post("/login", (req, res, next) => {
     User.findOne({ email: req.body.email })
     .then(user => {
       if (!User) {
