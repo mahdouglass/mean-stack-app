@@ -48,6 +48,10 @@ router.post("/signup", (req, res, next) => {
         'secret_this_should_be_longer_but_testing', 
         { expiresIn: '1h' }
       );
+      res.status(200).json({
+        message: 'Auth success',
+        token: token
+      })
     })
     .catch(err => {
       return res.status(401).json({
