@@ -5,7 +5,7 @@ ul {
 
 li {
     margin: 5px;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 a {
@@ -15,6 +15,7 @@ a {
 
 a:hover {
     color: #eee;
+    border-bottom: 1px solid white;
 }
 
 .active-link {
