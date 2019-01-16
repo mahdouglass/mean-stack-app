@@ -2,8 +2,9 @@
     <span><a routerLink="/">My App</a></span>
     <span class="spacer"></span>
     <ul>
-        <li><a routerLink="/create" routerLinkActive="active-link">New Post</a></li>
-        <li><a routerLink="/login" routerLinkActive="active-link">Login</a></li>
-        <li><a routerLink="/signup" routerLinkActive="active-link">Signup</a></li>   
+        <li *ngIf="userIsAuthenticated"><a routerLink="/create" routerLinkActive="active-link">New Post</a></li>
+        <li *ngIf="!userIsAuthenticated"><a routerLink="/login" routerLinkActive="active-link">Login</a></li>
+        <li *ngIf="!userIsAuthenticated"><a routerLink="/signup" routerLinkActive="active-link">Signup</a></li>
+        <li *ngIf="userIsAuthenticated"><button mat-button>Log Out</button></li>   
     </ul>
 </mat-toolbar>
