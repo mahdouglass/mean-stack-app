@@ -14,8 +14,7 @@ a {
 }
 
 a:hover {
-    color: #eee;
-    border-bottom: 1px solid white;
+    color: #ddd;
 }
 
 .active-link {

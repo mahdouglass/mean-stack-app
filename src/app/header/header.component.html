@@ -3,13 +3,13 @@
     <span class="spacer"></span>
     <ul>
         <li *ngIf="userIsAuthenticated">
-            <a routerLink="/create" routerLinkActive="active-link">New Post</a>
+            <a routerLink="/create" routerLinkActive="active-link" class="mat-button">New Post</a>
         </li>
         <li *ngIf="!userIsAuthenticated">
-            <a routerLink="/login" routerLinkActive="active-link">Login</a>
+            <a routerLink="/login" routerLinkActive="active-link" class="mat-button">Login</a>
         </li>
         <li *ngIf="!userIsAuthenticated">
-            <a routerLink="/signup" routerLinkActive="active-link">Signup</a>
+            <a routerLink="/signup" routerLinkActive="active-link" class="mat-button">Signup</a>
         </li>
         <li *ngIf="userIsAuthenticated">
             <button mat-button (click)="onLogout()">Log Out</button>
