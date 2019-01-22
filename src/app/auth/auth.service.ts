@@ -56,6 +56,17 @@ export class AuthService {
             });
     }
 
+    autoAuthUser() {
+        const authInformation = this.getAuthDate();
+        const now = new Date();
+        const isInFuture = authInformation.expirationDate > now;
+        if (isInFuture) {
+            this.token = authInformation.token;
+            this.isAuthenticated = true;
+            this.authStatusListener.next(true);
+        }
+    }
+
     logout() {
         this.token = null;
         this.isAuthenticated = false;
@@ -72,5 +83,17 @@ export class AuthService {
     private clearAuthData() {
         localStorage.removeItem('token');
         localStorage.removeItem('expiration');
+    }
+
+    private getAuthDate() {
+        const token = localStorage.getItem('token');
+        const expirationDate = localStorage.getItem("expiration");
+        if (!token && !expirationDate) {
+            return;
+        }
+        return {
+            token: token,
+            expirationDate: new Date(expirationDate)
+        }
     }
 }
