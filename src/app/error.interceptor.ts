@@ -5,11 +5,12 @@ import { throwError } from 'rxjs';
 export class ErrorInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler) {
-       return next.handle(req).pipe();
-       catchError((error: HttpErrorResponse) => {
-           console.log(error);
-           alert(error.error.message);
-           return throwError(error);
-       });
+       return next.handle(req).pipe(
+            catchError((error: HttpErrorResponse) => {
+                console.log(error);
+                alert(error.error.message);
+                return throwError(error);
+            })
+       );
     }
 }
