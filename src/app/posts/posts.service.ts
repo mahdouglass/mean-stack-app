@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 import { environment } from "../../environments/environment";
 import { Post } from "./posts.model";
 
-const BACKEND_URL = environment.apiUrl + "/posts";
+const BACKEND_URL = environment.apiUrl + "/posts/";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
