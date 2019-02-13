@@ -1,0 +1,6 @@
+{
+    "env": {
+        "MONGO_ATLAS_PW": "m001-mongodb-basics",
+        "JWT_KEY": "secret_this_should_be_longer_but_testing"
+    }
+}
